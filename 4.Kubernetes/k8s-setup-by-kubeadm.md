@@ -1,8 +1,8 @@
 ## Step 1 - Start your vagrant box
 
-``
+`
 vim /Vagrantfile
-``
+`
 
 
 ```
@@ -34,9 +34,12 @@ Vagrant.configure("2") do |config|
 
 end
 
-````
+```
 
-``` vagrant up ```
+```
+vagrant up 
+
+```
 
 
 ## Step 2 - Update host files on both master and worker node
