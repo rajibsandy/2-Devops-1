@@ -6,14 +6,17 @@ vagrant ssh master
 
 ```
 sudo vi /etc/hosts
-```
 100.0.0.1 master.jhooq.com master
 100.0.0.2 worker.jhooq.com worker
 
+```
+
 # for all vms
+
+```
 ping worker or ip
 ping master
-
+```
 
 ### Step 3 - Install Docker on both master and worker node
  install Docker on both the node.
@@ -35,16 +38,13 @@ sudo ufw disable
 sudo swapoff -a
 ```
 
-### Step 5 - Install “apt-transport-https” package
 
 ```
+### Step 5 - Install “apt-transport-https” package
 sudo apt-get update && sudo apt-get install -y apt-transport-https
-```
 
 ### Step 6 - Download the public keys
-```
 curl -s https://packages.cloud.google.com/apt/doc/apt-key.gpg | sudo apt-key add -
-```
 
 ### Step 7 - Add kubernetes repo
 sudo bash -c 'echo "deb http://apt.kubernetes.io/ kubernetes-xenial main" > /etc/apt/sources.list.d/kubernetes.list'
@@ -96,3 +96,4 @@ In the args section add : - -iface=eth1
 kubectl apply -f kube-flannel.yml
 
 
+```
