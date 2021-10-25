@@ -1,4 +1,4 @@
-## Step 1 - Start your vagrant box
+### Step 1 - Start your vagrant box
 
 `
 vim /Vagrantfile
@@ -38,32 +38,24 @@ end
 
 ```
 vagrant up 
-
 ```
-
-
-## Step 2 - Update host files on both master and worker node
+### Step 2 - Update host files on both master and worker node
+```
 vagrant ssh master
-
-## For all vms
-
+```
+***For all vms
 ```
 sudo vi /etc/hosts
 100.0.0.1 master.jhooq.com master
 100.0.0.2 worker.jhooq.com worker
-
 ```
-
-## For all vms
-
+***For all vms
 ```
 ping worker or ip
 ping master
 ```
-
 ### Step 3 - Install Docker on both master and worker node
- install Docker on both the node.
-
+ **install Docker all vms
 ```
 sudo apt-get update
 sudo apt install docker.io
@@ -72,36 +64,35 @@ Created symlink /etc/systemd/system/multi-user.target.wants/docker.service → /
 sudo systemctl start  docker
 sudo systemctl status docker
 ```
-
-**Step 4 - Disable the firewall and turnoff the “swapping”**
-
+### Step 4 - Disable the firewall and turnoff the “swapping”
 ```
 sudo systemctl status docker
 sudo ufw disable
 sudo swapoff -a
 ```
-
-
-
-**Step 5 - Install “apt-transport-https” package**
-
-``` sudo apt-get update && sudo apt-get install -y apt-transport-https ```
-
+### Step 5 - Install “apt-transport-https” package
+``` 
+sudo apt-get update && sudo apt-get install -y apt-transport-https 
+```
 ### Step 6 - Download the public keys
-``` curl -s https://packages.cloud.google.com/apt/doc/apt-key.gpg | sudo apt-key add - ```
-
+``` 
+curl -s https://packages.cloud.google.com/apt/doc/apt-key.gpg | sudo apt-key add - 
+```
 ### Step 7 - Add kubernetes repo
-``` sudo bash -c 'echo "deb http://apt.kubernetes.io/ kubernetes-xenial main" > /etc/apt/sources.list.d/kubernetes.list' ```
-
+``` 
+sudo bash -c 'echo "deb http://apt.kubernetes.io/ kubernetes-xenial main" > /etc/apt/sources.list.d/kubernetes.list' 
+```
 ### Step 8 - Install kubernetes
-sudo apt-get update && sudo apt-get install -y kubelet kubeadm kubectl
+``` 
+sudo apt-get update && sudo apt-get install -y kubelet kubeadm kubectl 
+```
 
 ### Step 9 - Enable and Start kubelet
+``` 
 sudo systemctl enable kubelet
-sudo systemctl start kubelet
-
+sudo systemctl start kubelet 
+````
 ### Step 10 - Initialize the kubernetes cluster
-
 ```
 sudo kubeadm init --apiserver-advertise-address=100.0.0.1
 (Note : - Followig command will be different for you, do not try copy the following command)
@@ -116,19 +107,19 @@ sudo chown $(id -u):$(id -g) $HOME/.kube/config
 ```
 
 ### Step 12 - Apply CNI from kube-flannel.yml(only run on master)
-```wget https://raw.githubusercontent.com/coreos/flannel/master/Documentation/kube-flannel.yml ```
-
+```
+wget https://raw.githubusercontent.com/coreos/flannel/master/Documentation/kube-flannel.yml 
+```
 
 ### Step 13 - Join worker nodes to master(only run on worker)
-
 ```
 sudo kubeadm join 100.0.0.1:6443 --token g2bsw7.5xr3bqc21eqyc6r7     --discovery-token-ca-cert-hash sha256:39b2b0608b9300b3342a8d0a0e9204c8fc74d45b008043a810f94e4f1fb8861f
 ```
 
 ### Step 14 - Check the nodes status(only run on master)
-``` kubectl get nodes ```
-
-
+``` 
+kubectl get nodes 
+```
 
 ### Troubleshooting kube-flannel.yml
 ```ip a s
