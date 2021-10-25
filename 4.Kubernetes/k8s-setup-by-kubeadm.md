@@ -1,11 +1,10 @@
 ### Step 1 - Start your vagrant box
 
-`
-vim /Vagrantfile
-`
-
-
 ```
+vim /Vagrantfile
+```
+```
+<font size="3">xxxxxx</font> 
 Vagrant.configure("2") do |config|
   config.vm.define "kmaster" do |kmaster|
     kmaster.vm.box_download_insecure = true
