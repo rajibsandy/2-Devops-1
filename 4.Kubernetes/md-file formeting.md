@@ -1,6 +1,6 @@
 [Redirection](https://google.com/) ==>  Redirect any text
 
-* bullet point  ==> ullet point
+* bullet point  ==> Bullet point
 
 **Note:**  ==> 
 
