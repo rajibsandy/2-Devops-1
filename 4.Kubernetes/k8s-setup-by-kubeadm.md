@@ -36,6 +36,8 @@ end
 
 ````
 
+``` vagrant up ```
+
 
 ## Step 2 - Update host files on both master and worker node
 vagrant ssh master
