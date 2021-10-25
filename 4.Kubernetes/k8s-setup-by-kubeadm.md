@@ -1,4 +1,42 @@
 ## Step 1 - Start your vagrant box
+
+``
+vim /Vagrantfile
+``
+
+
+```
+Vagrant.configure("2") do |config|
+  config.vm.define "kmaster" do |kmaster|
+    kmaster.vm.box_download_insecure = true
+    kmaster.vm.box = "hashicorp/bionic64"
+    kmaster.vm.network "private_network", ip: "100.0.0.1"
+    kmaster.vm.hostname = "kmaster"
+    kmaster.vm.provider "virtualbox" do |v|
+      v.name = "kmaster"
+      v.memory = 2048
+      v.cpus = 1
+    end
+  end
+
+  config.vm.define "kworker" do |kworker|
+    kworker.vm.box_download_insecure = true
+    kworker.vm.box = "hashicorp/bionic64"
+    kworker.vm.network "private_network", ip: "100.0.0.2"
+    kworker.vm.hostname = "kworker"
+    kworker.vm.provider "virtualbox" do |v|
+      v.name = "kworker"
+      v.memory = 1024
+      v.cpus = 1
+    end
+  end
+
+
+end
+
+````
+
+
 ## Step 2 - Update host files on both master and worker node
 vagrant ssh master
 
