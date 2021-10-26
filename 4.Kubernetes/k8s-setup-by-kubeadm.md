@@ -1,5 +1,6 @@
 
 
+
 ### Step 1 - Start your vagrant box
 
 ```
@@ -39,22 +40,22 @@ end
 ```
 vagrant up 
 ```
-### Step 2 - Update host files on both master and worker node
+### Step 2 - Update host files on both kmaster and kworker node
 ```
-vagrant ssh master
+vagrant ssh kmaster
 ```
 ***For all vms
 ```
 sudo vi /etc/hosts
-100.0.0.1 master.jhooq.com master
-100.0.0.2 worker.jhooq.com worker
+100.0.0.1 kmaster.jhooq.com kmaster
+100.0.0.2 kworker.jhooq.com kworker
 ```
 ***For all vms
 ```
-ping worker or ip
-ping master
+ping kworker or ip
+ping kmaster
 ```
-### Step 3 - Install Docker on both master and worker node
+### Step 3 - Install Docker on both kmaster and kworker node
  **install Docker all vms
 ```
 sudo apt-get update
@@ -99,24 +100,24 @@ sudo kubeadm init --apiserver-advertise-address=100.0.0.1
 sudo kubeadm join 100.0.0.1:6443 --token g2bsw7.5xr3bqc21eqyc6r7 --discovery-token-ca-cert-hash sha256:39b2b0608b9300b3342a8d0a0e9204c8fc74d45b008043a810f94e4f1fb8861f
 ```
 
-### Step 11 - Move kube config file to current user (only run on master)
+### Step 11 - Move kube config file to current user (only run on kmaster)
 ```
 mkdir -p $HOME/.kube
 sudo cp -i /etc/kubernetes/admin.conf $HOME/.kube/config
 sudo chown $(id -u):$(id -g) $HOME/.kube/config
 ```
 
-### Step 12 - Apply CNI from kube-flannel.yml(only run on master)
+### Step 12 - Apply CNI from kube-flannel.yml(only run on kmaster)
 ```
-wget https://raw.githubusercontent.com/coreos/flannel/master/Documentation/kube-flannel.yml 
+wget https://raw.githubusercontent.com/coreos/flannel/kmaster/Documentation/kube-flannel.yml 
 ```
 
-### Step 13 - Join worker nodes to master(only run on worker)
+### Step 13 - Join kworker nodes to kmaster(only run on kworker)
 ```
 sudo kubeadm join 100.0.0.1:6443 --token g2bsw7.5xr3bqc21eqyc6r7     --discovery-token-ca-cert-hash sha256:39b2b0608b9300b3342a8d0a0e9204c8fc74d45b008043a810f94e4f1fb8861f
 ```
 
-### Step 14 - Check the nodes status(only run on master)
+### Step 14 - Check the nodes status(only run on kmaster)
 ``` 
 kubectl get nodes 
 ```
