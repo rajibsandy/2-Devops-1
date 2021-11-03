@@ -44,3 +44,13 @@ Add another line to resume regular paragraph text.
 
 
 
+
+**exmple:** 
+
+| ![images/kubernetes-storage.png](images/kubernetes-storage.png) |
+| --------------------------------------------------------------- |
+
+**exmple:** 
+
+
+
