@@ -6,11 +6,8 @@
 
 **Note:** Minikube is a combination of `boot2docker`, `docker-machine`, and `kubeadm`.
 
-**exmple:** 
-
-
-
-**exmple:** 
+- `dddddddddddd init`   ddddddddddd
+- `ddddddddd init`    aaaaaaaaa 
 
 **Note:** In the diagram above, it says:
 > One PVC *can* be shared between multiple pods of a Deployment.
