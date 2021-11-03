@@ -40,7 +40,14 @@ nginx-7b874889c6-w5lj9       0/1     ContainerCreating   0          36s     <non
 
 Add another line to resume regular paragraph text.
 
-
+|Role|FQDN|IP|OS|RAM|CPU|
+|----|----|----|----|----|----|
+|Load Balancer|loadbalancer1.example.com|172.16.16.51|Ubuntu 20.04|512M|1|
+|Load Balancer|loadbalancer2.example.com|172.16.16.52|Ubuntu 20.04|512M|1|
+|Master|kmaster1.example.com|172.16.16.101|Ubuntu 20.04|2G|2|
+|Master|kmaster2.example.com|172.16.16.102|Ubuntu 20.04|2G|2|
+|Master|kmaster3.example.com|172.16.16.103|Ubuntu 20.04|2G|2|
+|Worker|kworker1.example.com|172.16.16.201|Ubuntu 20.04|2G|2|
 
 
 
