@@ -20,18 +20,14 @@ If you want to try this in a virtualized environment on your workstation
 * Host machine has atleast 8 cores
 * Host machine has atleast 8G memory
 
-## Bring up all the virtual machines
+## Bring up all the virtual machines by vagrant
 
-
-
-# Enable ssh password authentication
 
 ```
+sudo mkdir play
 sudo cat > bootstrap.sh
-
-CRTL+D
-
 ```
+
 ```
 #!/bin/bash
 
@@ -40,7 +36,6 @@ echo "[TASK 1] Enable ssh password authentication"
 sed -i 's/^PasswordAuthentication .*/PasswordAuthentication yes/' /etc/ssh/sshd_config
 echo 'PermitRootLogin yes' >> /etc/ssh/sshd_config
 systemctl reload sshd
-
 # Set Root password
 echo "[TASK 2] Set root password"
 echo -e "kubeadmin\nkubeadmin" | passwd root >/dev/null 2>&1
@@ -63,11 +58,8 @@ sudo cat > Vagrantfile
 # vi: set ft=ruby :
 
 ENV['VAGRANT_NO_PARALLEL'] = 'yes'
-
 Vagrant.configure(2) do |config|
-
   config.vm.provision "shell", path: "bootstrap.sh"
-
   NodeCount = 3
 
   # Kubernetes Nodes
@@ -97,6 +89,7 @@ vagrant up
 
 
 
+# Enable ssh password authentication
 ## Set up password less SSH Logins on all nodes
 We will be using SSH Keys to login to root account on all the kubernetes nodes. I am not going to set a passphrase for this ssh keypair.
 ##### Create an ssh keypair on the host machine
