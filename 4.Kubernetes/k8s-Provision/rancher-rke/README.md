@@ -1,4 +1,4 @@
-# Set up a Highly Available Kubernetes Cluster using Rancher RKE
+# Let's Set up a HA-Kubernetes Cluster using Rancher RKE
 Follow this documentation to set up a highly available Kubernetes cluster on __Ubuntu 20.04 LTS__ machines using Rancher's RKE.
 
 This documentation guides you in setting up a cluster with three nodes all of which play master, etcd and worker role.
