@@ -95,9 +95,7 @@ CRTL+D
 vagrant up
 ```
 
-## Download RKE Binary
-##### Download the latest release from the Github releases page
-[Rancher RKE Releases - Github](https://github.com/rancher/rke/releases)
+
 
 ## Set up password less SSH Logins on all nodes
 We will be using SSH Keys to login to root account on all the kubernetes nodes. I am not going to set a passphrase for this ssh keypair.
@@ -139,6 +137,11 @@ sysctl --system
   apt update && apt install -y docker-ce=5:19.03.10~3-0~ubuntu-focal containerd.io
 }
 ```
+## Download RKE Binary to host diractory
+##### Download the latest release from the Github releases page
+[Rancher RKE Releases - Github](https://github.com/rancher/rke/releases)
+
+
 
 ## Bring up Kubernetes cluster
 ##### Create cluster configuration
