@@ -95,6 +95,13 @@ ssh-copy-id root@172.16.16.103
 ```
 
 ## Prepare the kubernetes nodes (node1, node2, node3)
+```
+sudo ssh root@172.16.16.101 
+sudo ssh root@172.16.16.102
+sudo ssh root@172.16.16.103
+password= kubeadmin
+```
+
 ##### Disable Firewall
 ```
 ufw disable
