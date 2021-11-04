@@ -13,7 +13,7 @@ Follow this documentation to set up a highly available Kubernetes cluster on __U
 
 ## Pre-requisites
 If you want to try this in a virtualized environment on your workstation
-* Virtualbox installed * Vagrant installed * Host machine has atleast 8 cores * Host machine has atleast 8G memory
+#### Virtualbox installed # Vagrant installed # Host machine 8 cores # Host machine 8G memory
 
 ## Bring up all the virtual machines by vagrant
 
@@ -44,9 +44,7 @@ CRTL+D
 
 ```
 sudo cat > Vagrantfile
-
 ```
-
 
 ```
 # -*- mode: ruby -*-
@@ -81,8 +79,6 @@ CRTL+D
 ```
 vagrant up
 ```
-
-
 
 # Enable ssh password authentication
 ## Set up password less SSH Logins on all nodes
