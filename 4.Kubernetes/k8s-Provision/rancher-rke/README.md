@@ -41,7 +41,6 @@ echo -e "kubeadmin\nkubeadmin" | passwd root >/dev/null 2>&1
 CRTL+D
 ```
 
-
 ```
 sudo cat > Vagrantfile
 ```
@@ -125,11 +124,12 @@ sysctl --system
 ##### Download the latest release from the Github releases page
 [Rancher RKE Releases - Github](https://github.com/rancher/rke/releases)
 
-
-
 ## Bring up Kubernetes cluster
 ##### Create cluster configuration
 ```
+sudo wget (dowenlode link)
+sudo chmod +x (dowenlode file)
+mv (dowenlode file) /usr/bin/....
 rke config
 ```
 Once gone through this interactive cluster configuration, you will end up with cluster.yml file in the current directory.
