@@ -1,8 +1,6 @@
 # Let's Set up a HA-Kubernetes Cluster using Rancher RKE
 Follow this documentation to set up a highly available Kubernetes cluster on __Ubuntu 20.04 LTS__ machines using Rancher's RKE.
 
-This documentation guides you in setting up a cluster with three nodes all of which play master, etcd and worker role.
-
 ## Vagrant Environment
 |Role|FQDN|IP|OS|RAM|CPU|
 |----|----|----|----|----|----|
@@ -15,10 +13,7 @@ This documentation guides you in setting up a cluster with three nodes all of wh
 
 ## Pre-requisites
 If you want to try this in a virtualized environment on your workstation
-* Virtualbox installed
-* Vagrant installed
-* Host machine has atleast 8 cores
-* Host machine has atleast 8G memory
+* Virtualbox installed * Vagrant installed * Host machine has atleast 8 cores * Host machine has atleast 8G memory
 
 ## Bring up all the virtual machines by vagrant
 
