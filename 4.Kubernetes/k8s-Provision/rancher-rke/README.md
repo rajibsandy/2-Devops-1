@@ -170,4 +170,9 @@ kubectl get nodes
 kubectl get cs
 ```
 
-Have Fun!!
+## Delete the cluster
+```
+rke remove
+```
+
+### Have Fun!!
