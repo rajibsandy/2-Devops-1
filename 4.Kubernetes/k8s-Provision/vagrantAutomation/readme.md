@@ -10,7 +10,7 @@ If you want to try this in a virtualized environment on your workstation
 ## Bring up all the virtual machines
 ```
 vagrant up
-
+```
 
 ##### Copy SSH Keys to all the kubernetes nodes
 The root password is **kubeadmin**
