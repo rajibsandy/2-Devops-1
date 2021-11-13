@@ -15,6 +15,10 @@ vagrant up
 ##### Copy SSH Keys to all the kubernetes nodes
 The root password is **kubeadmin**
 ```
+root@172.16.16.101
+root@172.16.16.102
+root@172.16.16.103
+```
 
 ## Downloading kube config to your local machine
 On your host machine
