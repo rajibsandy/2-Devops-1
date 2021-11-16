@@ -1,0 +1,5 @@
+```
+cat > filename (ENTER)
+test
+
+```
