@@ -1,5 +1,7 @@
 ```
 cat > filename (ENTER)
-test
+text here
+
+and exit by ctl+c
 
 ```
