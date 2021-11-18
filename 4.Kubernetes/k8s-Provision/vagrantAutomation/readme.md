@@ -16,9 +16,9 @@ vagrant up
 The root password is **kubeadmin**
 
 ```
+root@172.16.16.100
 root@172.16.16.101
 root@172.16.16.102
-root@172.16.16.103
 
 ```
 
