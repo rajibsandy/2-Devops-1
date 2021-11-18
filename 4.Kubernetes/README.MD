@@ -1,7 +1,10 @@
 # Cheatsheet - Commonly used kubectl Commands
 
 ```bash
+kubectl cluster-info                                     # See all cluster-info
+kubectl get nodes                                        # See nodes in cluster
 kubectl config get-contexts                              # See all available contexts
+
 kubectl config view                                      # See current cluster context
 kubectl config set-context $(kubectl config current-context) --namespace=my-namespace
                                                          # Change default namespace
