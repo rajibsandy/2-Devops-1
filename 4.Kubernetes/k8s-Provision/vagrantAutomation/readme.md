@@ -26,12 +26,15 @@ root@172.16.16.102
 On your host machine
 ```
 mkdir ~/.kube
+```
 
 ## Verifying the cluster
+
 ```
 kubectl cluster-info
 kubectl get nodes
 kubectl get cs
+
 ```
 
 Have Fun!!
